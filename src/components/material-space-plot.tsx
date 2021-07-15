@@ -1,8 +1,16 @@
 import * as React from 'react';
 import { CartesianGrid, Scatter, Tooltip, XAxis, YAxis } from "recharts"
 import { ScatterChart } from "recharts/src/chart/ScatterChart"
+import chroma from "chroma-js"
+import CustomTooltip from "./custom-tooltip"
 
 function MaterialSpacePlot({ dataSet, onClick: handleOnClick}) {
+
+  const steelTypes = Array.from(new Set(dataSet.map(item => item.steelType)));
+  const dataBySteelType = steelTypes.reduce(
+    (accum, cur: string) => {
+      return {...accum, [cur]: dataSet.filter(item => item.steelType === cur)}
+    }, {});
 
   return (
     <ScatterChart
@@ -34,12 +42,15 @@ function MaterialSpacePlot({ dataSet, onClick: handleOnClick}) {
         }}
         domain={[0, 0.3]}
       />
-      <Tooltip cursor={false} />
-      <Scatter
-        name="Steel space"
-        data={dataSet}
-        onClick={handleOnClick}
-      />
+      <Tooltip cursor={false} content={CustomTooltip}/>
+      {Object.keys(dataBySteelType).map((item, index) =>
+        <Scatter
+          name={item}
+          data={dataBySteelType[item]}
+          fill={chroma.scale("RdYlBu").colors(steelTypes.length)[index]}
+          onClick={handleOnClick}
+        />
+      )}
     </ScatterChart>
   );
 }

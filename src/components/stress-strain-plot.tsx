@@ -45,6 +45,7 @@ function StressStrainPlot({ couponData, onClick: handleOnClick} ) {
           })}
           dataKey="sigma"
           dot={false}
+          strokeWidth={3}
         />
     </LineChart>
   );
