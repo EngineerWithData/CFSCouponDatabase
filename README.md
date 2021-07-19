@@ -18,7 +18,7 @@ Or you clone this repository to run locally by running the following command
 
 Visit the data viewer at http://localhost:8000
 
-##Motivation
+## Motivation
 
 Every structural steel research project starts with tensile coupon tests. 
 Over the years, too many coupons have been pulled but few data have been collected. 
@@ -27,7 +27,7 @@ This database aims to change that.
 As a side project from a NSF funded research project, this database hosts over 200 stress-strain curves from coupon tests conducted in the Thin-Walled Structures Lab at the Johns Hopkins University. 
 In addition to data of conventional mild steel, the latest coupon data of advanced strength steel (AHSS), the next generation construction steel, are also included. We hope this database can provide structural steel researchers with valuable data for future research.
 
-##References
+## References
 * Xia, Y., Ding, C., Li, Z., Schafer, B. W., and Blum, H. B. 2021. “Numerical modeling of stress-strain relationships for advanced high strength steels.” Journal of Constructional Steel Research, 182, 106687. https://doi.org/10.1016/j.jcsr.2021.106687.
 * Ayhan, D., and Schafer, B. W. 2015. “Cold-formed steel member bending stiffness prediction.” Journal of Constructional Steel Research, 115, 148–159. https://doi.org/10.1016/j.jcsr.2015.07.004.
 * Tao, F., Chatterjee, A., and Moen, C. D. 2016. Monotonic and cyclic response of single shear cold-formed steel-to-steel and sheathing-to-steel connections. Virginia Tech Research Report No. CE/VPI-ST-16/01, Blacksburg, VA.
