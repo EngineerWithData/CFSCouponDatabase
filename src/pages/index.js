@@ -4,15 +4,23 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import JSONData from "../../content/all-data.json"
 import DataPlayground from "../components/data-playground"
+import { useState } from "react"
+import NavigationBar from "../components/navigation-bar"
+import { nanoid } from "nanoid"
 
 function IndexPage() {
 
+  const [isMetric, setIsMetric] = useState(false);
 
   return (
-    <Layout>
+    <Layout
+      navigation={(
+        <NavigationBar
+          useMetric={{enabled: isMetric, onChange: () => setIsMetric(!isMetric)}}
+        />)}
+    >
       <Seo title="Home" />
-      <h2 className="text-red-500">Data Playground</h2>
-      <DataPlayground dataSet={JSONData}/>
+      <DataPlayground dataSet={JSONData} isMetric={isMetric}/>
     </Layout>
   )
 }

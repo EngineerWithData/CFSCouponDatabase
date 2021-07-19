@@ -1,32 +1,24 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import NavigationBar from "./navigation-bar"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, navigation}) => (
   <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
+    className="flex-initial bg-indigo-800"
   >
     <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
+      className="flex justify-between items-center py-4 px-8"
     >
-      <h1 style={{ margin: 0 }}>
+      <h1>
         <Link
           to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+          className="text-white text-3xl font-bold"
         >
           {siteTitle}
         </Link>
       </h1>
+      {navigation}
     </div>
   </header>
 )
