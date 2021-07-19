@@ -1,5 +1,5 @@
 import * as React from 'react'
-import YAMLData from '../../content/about.yaml'
+import YAMLData from '../../data/about.yaml'
 
 function About() {
 

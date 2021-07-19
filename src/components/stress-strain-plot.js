@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 import { getCurve } from "../utils/getCurve"
-import CurveTooltip from "./curve-tooltip"
 
 function StressStrainPlot({ dataSet, couponKey, onClick: handleOnClick, xLabel, yLabel, xDomain, yDomain, toolTip} ) {
 
