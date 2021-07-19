@@ -13,7 +13,7 @@ This repository comes with a data viewer. You can use the viewer at the www.cfs-
 Or you clone this repository to run locally by running the following command
     
     git clone https://github.com/cding91/gatsby-cfs.git
-    cd cfs-database/
+    cd gatsby-cfs/
     gatsby develop
 
 Visit the data viewer at http://localhost:8000
