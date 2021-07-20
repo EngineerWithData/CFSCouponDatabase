@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
 import { getCurve } from "../utils/getCurve"
 
 function StressStrainPlot({ dataSet, couponKey, onClick: handleOnClick, xLabel, yLabel, xDomain, yDomain, toolTip} ) {

@@ -18,7 +18,7 @@ function IndexPage() {
           useMetric={{enabled: isMetric, onChange: () => setIsMetric(!isMetric)}}
         />)}
     >
-      <Seo title="Home" />
+      <Seo title="Playground" />
       <DataPlayground dataSet={JSONData} isMetric={isMetric}/>
     </Layout>
   )
