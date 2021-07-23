@@ -25,7 +25,7 @@ const Layout = ({ children, navigation }) => {
   return (
     <div className="">
       <Header
-        className='sticky top-0'
+        className='sticky top-0 z-40'
         siteTitle={data.site.siteMetadata?.title || `Title`}
         navigation={navigation}
       />
