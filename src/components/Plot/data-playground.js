@@ -48,7 +48,7 @@ function DataPlayground({ className, dataSet, isMetric}) {
         />
       }
       <CFSRCLink className="absolute bottom-5 right-12"/>
-      <VersionTag className="absolute top-24 right-14"/>
+      <VersionTag className="absolute top-26 right-14"/>
     </div>
   )
 }

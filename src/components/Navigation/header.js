@@ -12,7 +12,7 @@ const Header = ({ className, siteTitle, navigation}) => (
       <h1>
         <Link
           to="/"
-          className="text-white text-3xl font-bold"
+          className="text-lg md:text-3xl text-white  font-bold"
         >
           {siteTitle}
         </Link>
