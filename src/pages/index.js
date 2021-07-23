@@ -1,11 +1,13 @@
 import * as React from "react"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/Layout/layout"
+import Seo from "../components/SEO/seo"
 import JSONData from "../../data/all-data.json"
-import DataPlayground from "../components/data-playground"
+import DataPlayground from "../components/Plot/data-playground"
 import { useState } from "react"
-import NavigationBar from "../components/navigation-bar"
+import NavigationBar from "../components/Navigation/navigation-bar"
+import References from "../components/References/references"
+import NextGenSteel from "../components/NextGenSteel/next-gen-steel"
 
 function IndexPage() {
 
@@ -20,6 +22,8 @@ function IndexPage() {
     >
       <Seo title="Playground" />
       <DataPlayground dataSet={JSONData} isMetric={isMetric}/>
+      <References />
+      <NextGenSteel />
     </Layout>
   )
 }

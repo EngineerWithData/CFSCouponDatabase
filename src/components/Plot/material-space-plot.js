@@ -14,13 +14,13 @@ function MaterialSpacePlot({ dataSet, onClick: handleOnClick, xLabel, yLabel, xD
     }, {});
 
   return (
-    <ResponsiveContainer height="99%" aspect={2}>
+    <ResponsiveContainer width="100%" aspect={2}>
       <ScatterChart
         margin={{
-          top: 30,
-          right: 30,
-          bottom: 30,
-          left: 30,
+          top: 50,
+          right: 50,
+          bottom: 50,
+          left: 50,
         }}
       >
         <CartesianGrid />

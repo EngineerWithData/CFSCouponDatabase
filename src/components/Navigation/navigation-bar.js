@@ -1,10 +1,27 @@
 import * as React from 'react'
 import { Switch } from '@headlessui/react'
+import { AnchorLink } from "gatsby-plugin-anchor-links"
+import GithubLinkButton from "./github-link-button"
 
 function NavigationBar({ useMetric }) {
 
   return (
     <div className="flex space-x-4 items-center">
+      <AnchorLink
+        to="/#playground"
+        title="Playground"
+        className="px-2 py-1 text-white hover:bg-indigo-600"
+      />
+      <AnchorLink
+        to="/#references"
+        title="References"
+        className="px-2 py-1 text-white hover:bg-indigo-600"
+      />
+      <AnchorLink
+        to="/#nextgensteel"
+        title="Nextgensteel"
+        className="px-2 py-1 text-white hover:bg-indigo-600"
+      />
       <Switch.Group>
         <Switch.Label className="pl-3 py-1 text-white">
           Metric
@@ -23,12 +40,7 @@ function NavigationBar({ useMetric }) {
           />
         </Switch>
       </Switch.Group>
-      <a
-        href="https://github.com/cding91/gatsby-cfs"
-        className="px-3 py-1 text-white hover:bg-indigo-600"
-      >
-        GitHub
-      </a>
+      <GithubLinkButton url="https://github.com/cding91/gatsby-cfs" />
     </div>
   );
 }

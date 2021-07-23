@@ -2,12 +2,14 @@ import * as React from 'react';
 import { useState } from "react"
 import MaterialSpacePlot from "./material-space-plot"
 import StressStrainPlot from "./stress-strain-plot"
-import { convertToMetricData } from "../utils/convertToMetricData"
+import { convertToMetricData } from "../../utils/convertToMetricData"
 import SpaceTooltip from "./space-tooltip"
 import { Tooltip } from "recharts"
 import CurveTooltip from "./curve-tooltip"
+import CFSRCLink from "./cfsrc-link"
+import VersionTag from "./version-tag"
 
-function DataPlayground({ dataSet, isMetric}) {
+function DataPlayground({ className, dataSet, isMetric}) {
 
   const [chartMode, setChartMode] = useState(0);
   const [couponClicked, setCouponClicked] = useState(null);
@@ -23,7 +25,7 @@ function DataPlayground({ dataSet, isMetric}) {
   }
 
   return (
-    <div className="relative">
+    <div className={`${className} w-screen relative`} id="playground">
       {chartMode === 0 ?
         <MaterialSpacePlot
           dataSet={isMetric ? dataSet.map(item => convertToMetricData(item)) : dataSet}
@@ -45,8 +47,10 @@ function DataPlayground({ dataSet, isMetric}) {
           toolTip={<Tooltip content={CurveTooltip} isMetric={isMetric} />}
         />
       }
+      <CFSRCLink className="absolute bottom-5 right-12"/>
+      <VersionTag className="absolute top-24 right-14"/>
     </div>
-  );
+  )
 }
 
-export default DataPlayground;
+export default DataPlayground

@@ -2,9 +2,9 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle, navigation}) => (
+const Header = ({ className, siteTitle, navigation}) => (
   <header
-    className="flex-initial bg-indigo-800"
+    className={`${className} flex-initial bg-indigo-800 w-full`}
   >
     <div
       className="flex justify-between items-center py-4 px-8"

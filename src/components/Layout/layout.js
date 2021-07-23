@@ -9,7 +9,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Header from "../Navigation/header"
 
 const Layout = ({ children, navigation }) => {
   const data = useStaticQuery(graphql`
@@ -23,8 +23,9 @@ const Layout = ({ children, navigation }) => {
   `)
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="">
       <Header
+        className='sticky top-0'
         siteTitle={data.site.siteMetadata?.title || `Title`}
         navigation={navigation}
       />

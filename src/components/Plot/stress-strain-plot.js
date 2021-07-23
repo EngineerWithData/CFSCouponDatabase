@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
-import { getCurve } from "../utils/getCurve"
+import { getCurve } from "../../utils/getCurve"
 
 function StressStrainPlot({ dataSet, couponKey, onClick: handleOnClick, xLabel, yLabel, xDomain, yDomain, toolTip} ) {
 
   const couponData = dataSet.find(item => item.index === couponKey);
 
   return (
-    <ResponsiveContainer aspect={2}>
+    <ResponsiveContainer width="100%" aspect={2}>
       <LineChart
         margin={{
-          top: 30,
-          right: 30,
-          bottom: 30,
-          left: 30,
+          top: 50,
+          right: 50,
+          bottom: 50,
+          left: 50,
         }}
         onClick={handleOnClick}
       >
