@@ -10,6 +10,7 @@ function StressStrainPlot({ dataSet, couponKey, onClick: handleOnClick, xLabel, 
   const graphDomain = getDomain(couponData.engCurve);
 
   return (
+    <>
     <ResponsiveContainer width="100%" aspect={2}>
       <LineChart
         margin={{
@@ -18,7 +19,6 @@ function StressStrainPlot({ dataSet, couponKey, onClick: handleOnClick, xLabel, 
           bottom: 50,
           left: 50,
         }}
-        onClick={handleOnClick}
       >
         <CartesianGrid />
         <XAxis
@@ -63,6 +63,20 @@ function StressStrainPlot({ dataSet, couponKey, onClick: handleOnClick, xLabel, 
         <Legend verticalAlign="top" height={48}/>
       </LineChart>
     </ResponsiveContainer>
+      <button
+        className={`
+        absolute left-24 sm:left-32 top-16 sm:top-28
+        inline-flex items-center hover:bg-gray-700
+        text-sm md:text-base
+        px-2 py-1 rounded-full bg-gray-400 text-white`}
+        onClick={handleOnClick}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="hidden md:inline mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+        </svg>
+        <span>Go back</span>
+      </button>
+    </>
   );
 }
 

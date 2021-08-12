@@ -14,6 +14,7 @@ function MaterialSpacePlot({ dataSet, onClick: handleOnClick, xLabel, yLabel, xD
     }, {});
 
   return (
+    <>
     <ResponsiveContainer width="100%" aspect={2}>
       <ScatterChart
         margin={{
@@ -62,6 +63,7 @@ function MaterialSpacePlot({ dataSet, onClick: handleOnClick, xLabel, yLabel, xD
         <Legend verticalAlign="top" height={48}/>
       </ScatterChart>
     </ResponsiveContainer>
+    </>
   );
 }
 

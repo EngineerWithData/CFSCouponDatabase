@@ -46,7 +46,7 @@ function DataPlayground({ className, dataSet, isMetric}) {
         />
       }
       <CFSRCLink className="absolute bottom-5 right-12"/>
-      <VersionTag className="absolute top-26 right-14"/>
+      <VersionTag className="absolute top-16 sm:top-14 md:top-26 right-14"/>
       <div className={`-mt-6 text-gray-400 px-14`}>
         Note: yield stress is determined by 0.2% offset
       </div>
