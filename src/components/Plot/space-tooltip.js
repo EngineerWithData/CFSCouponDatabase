@@ -14,6 +14,11 @@ function SpaceTooltip({ active, payload, isMetric }) {
           </li>
           <li key={nanoid()}>{`${payload[1].name} : ${payload[1].value.toFixed(2)}`}</li>
           <li key={nanoid(10)}>{`Source: ${payload[0].payload.dataSrc}`}</li>
+          {/*<li key={nanoid(10)}>*/}
+          {/*  {`Cut at: */}
+          {/*  ${decodeFrom(payload[0].payload.cutFrom, payload[0].payload.orientation)}*/}
+          {/*  `}*/}
+          {/*</li>*/}
           <li key={nanoid(10)} className="font-semibold">Click for stress-strain curve</li>
         </ul>
       </div>
@@ -24,3 +29,39 @@ function SpaceTooltip({ active, payload, isMetric }) {
 }
 
 export default SpaceTooltip;
+
+
+function decodeFrom(cut, orient) {
+  let result;
+  switch (cut) {
+    case "FL":
+      result = "flange"
+      break;
+    case "WB":
+      result = "web"
+      break;
+    case "SH":
+      result = "sheet"
+      break;
+    default:
+      result = cut;
+  }
+
+  result += "@";
+
+  switch (orient) {
+    case "L":
+      result += "longitudinal";
+      break;
+    case "T":
+      result += "transverse";
+      break;
+    case "D":
+      result += "diagonal";
+      break;
+    default:
+      result += orient
+  }
+
+  return result;
+}

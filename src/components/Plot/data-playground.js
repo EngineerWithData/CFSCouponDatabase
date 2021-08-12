@@ -42,8 +42,6 @@ function DataPlayground({ className, dataSet, isMetric}) {
           onClick={handleOnClickLine}
           xLabel="Strain"
           yLabel={`Stress ${isMetric ? "(MPa)" : "(ksi)"}`}
-          xDomain={[0, 0.25]}
-          yDomain={isMetric ? [0, 1800] : [0, 250]}
           toolTip={<Tooltip content={CurveTooltip} isMetric={isMetric} />}
         />
       }

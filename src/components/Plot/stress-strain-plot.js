@@ -1,10 +1,13 @@
 import * as React from 'react';
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
 import { getCurve } from "../../utils/getCurve"
+import { getDomain } from "../../utils/getDomain"
 
-function StressStrainPlot({ dataSet, couponKey, onClick: handleOnClick, xLabel, yLabel, xDomain, yDomain, toolTip} ) {
+function StressStrainPlot({ dataSet, couponKey, onClick: handleOnClick, xLabel, yLabel, toolTip} ) {
 
   const couponData = dataSet.find(item => item.index === couponKey);
+  const curve = getCurve(couponData.engCurve);
+  const graphDomain = getDomain(couponData.engCurve);
 
   return (
     <ResponsiveContainer width="100%" aspect={2}>
@@ -30,7 +33,7 @@ function StressStrainPlot({ dataSet, couponKey, onClick: handleOnClick, xLabel, 
           }}
           minTickGap={0.05}
           interval="preserveEnd"
-          domain={xDomain}
+          domain={[0, graphDomain.x]}
           allowDataOverflow={true}
         />
         <YAxis
@@ -44,12 +47,12 @@ function StressStrainPlot({ dataSet, couponKey, onClick: handleOnClick, xLabel, 
           }}
           scale="linear"
           allowDecimals={false}
-          domain={yDomain}
+          domain={[0, graphDomain.y]}
           allowDataOverflow={true}
         />
           <Line
             name={couponData.name}
-            data={getCurve(couponData.engCurve)}
+            data={curve}
             dataKey="sigma"
             dot={false}
             strokeWidth={4}
