@@ -39,4 +39,6 @@ In addition to data of conventional mild steel, the latest coupon data of advanc
 * Torabian, S., Fratamico, David. C., and Schafer, B. W. 2016. “Experimental response of cold-formed steel Zee-section beam-columns.” Thin-Walled Structures, 98, 496–517. https://doi.org/10.1016/j.tws.2015.10.016.
 * Yu, C., and Schafer, B. W. 2003. “Local Buckling Tests on Cold-Formed Steel Beams.” Journal of Structural Engineering, 129 (12), 1596–1606. https://doi.org/10.1061/(ASCE)0733-9445(2003)129:12(1596).
 * Yu, C., and Schafer, B. W. 2006. “Distortional Buckling Tests on Cold-Formed Steel Beams.” Journal of Structural Engineering, 132 (4), 515–528. https://doi.org/10.1061/(ASCE)0733-9445(2006)132:4(515).
+* Zhang, Z., Singh, A., Derveni, F., Torabian, S., Peterman, K. D., Hutchinson, T. C., and Schafer, B. W. 2021. “Cyclic experiments on isolated steel sheet connections for CFS framed steel sheet sheathed shear walls with new configurations.” Engineering Structures, 244, 112805. https://doi.org/10.1016/j.engstruct.2021.112805.
+
 
