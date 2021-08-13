@@ -33,7 +33,7 @@ function MaterialSpacePlot({ dataSet, onClick: handleOnClick, xLabel, yLabel, xD
             value: xLabel,
             position: "bottom",
             fontSize: "1.25em",
-            fill: "rgba(107, 114, 128)"
+            fill: "rgba(107, 114, 128)",
           }}
           domain={xDomain} />
         <YAxis
@@ -42,10 +42,11 @@ function MaterialSpacePlot({ dataSet, onClick: handleOnClick, xLabel, yLabel, xD
           name="eu"
           label={{
             value: yLabel,
-            position: "left",
+            position: "center",
+            dx: -30,
             angle: -90,
             fontSize: "1.25em",
-            fill: "rgba(107, 114, 128)"
+            fill: "rgba(107, 114, 128)",
           }}
           domain={yDomain}
         />
@@ -55,6 +56,7 @@ function MaterialSpacePlot({ dataSet, onClick: handleOnClick, xLabel, yLabel, xD
             name={steel}
             data={dataBySteelType[steel]}
             fill={chroma.scale("RdYlBu").colors(steelTypes.length)[index]}
+            fillOpacity={0.75}
             onClick={handleOnClick}
             key={nanoid()}
             isAnimationActive={true}

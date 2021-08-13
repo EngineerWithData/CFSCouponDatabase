@@ -2,7 +2,8 @@ import * as React from "react"
 
 import Layout from "../components/Layout/layout"
 import Seo from "../components/SEO/seo"
-import JSONData from "../../data/all-data.json"
+import CurveData from "../../data/all-data.json"
+import SpaceData from "../../data/space-only.json"
 import DataPlayground from "../components/Plot/data-playground"
 import { useState } from "react"
 import NavigationBar from "../components/Navigation/navigation-bar"
@@ -21,7 +22,7 @@ function IndexPage() {
         />)}
     >
       <Seo title="Playground" />
-      <DataPlayground dataSet={JSONData} isMetric={isMetric}/>
+      <DataPlayground preData={SpaceData} dataSet={CurveData} isMetric={isMetric}/>
       <References />
       <NextGenSteel />
     </Layout>

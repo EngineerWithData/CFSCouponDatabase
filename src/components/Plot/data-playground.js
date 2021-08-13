@@ -9,7 +9,7 @@ import CurveTooltip from "./curve-tooltip"
 import CFSRCLink from "./cfsrc-link"
 import VersionTag from "./version-tag"
 
-function DataPlayground({ className, dataSet, isMetric}) {
+function DataPlayground({ className, preData, dataSet, isMetric}) {
 
   const [chartMode, setChartMode] = useState(0);
   const [couponClicked, setCouponClicked] = useState(null);
@@ -19,7 +19,7 @@ function DataPlayground({ className, dataSet, isMetric}) {
     setChartMode(1);
   }
 
-  const handleOnClickLine = () => {
+  const handleOnClickCurve = () => {
     setCouponClicked(null);
     setChartMode(0);
   }
@@ -28,10 +28,10 @@ function DataPlayground({ className, dataSet, isMetric}) {
     <div className={`${className} w-screen relative mb-6`} id="playground">
       {chartMode === 0 ?
         <MaterialSpacePlot
-          dataSet={isMetric ? dataSet.map(item => convertToMetricData(item)) : dataSet}
+          dataSet={isMetric ? preData.map(item => convertToMetricData(item)) : preData}
           onClick={handleOnClickScatter}
           xLabel={`Yield stress, Fy ${isMetric ? "(MPa)" : "(ksi)"}`}
-          yLabel="Strain, eu"
+          yLabel="Strain at Fu, eu"
           xDomain={isMetric ? [0, 1800] : ([0, 250])}
           yDomain={[0, 0.3]}
           toolTip={<Tooltip cursor={false} content={SpaceTooltip} isMetric={isMetric}/>}
@@ -39,7 +39,7 @@ function DataPlayground({ className, dataSet, isMetric}) {
         <StressStrainPlot
           dataSet={isMetric ? dataSet.map(item => convertToMetricData(item)) : dataSet}
           couponKey={couponClicked}
-          onClick={handleOnClickLine}
+          onClick={handleOnClickCurve}
           xLabel="Strain"
           yLabel={`Stress ${isMetric ? "(MPa)" : "(ksi)"}`}
           toolTip={<Tooltip content={CurveTooltip} isMetric={isMetric} />}
