@@ -4,7 +4,7 @@
 
 ## What is inside
 
-<p>This repository stores over 200 cold-formed steel coupon test curves. 
+<p>This repository stores hundres of cold-formed steel coupon test curves. 
 
 We save the data as a json file at [here](./data/all-data.json) in the data folder.
 
