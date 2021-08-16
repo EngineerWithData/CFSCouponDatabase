@@ -55,7 +55,7 @@ function MaterialSpacePlot({ dataSet, onClick: handleOnClick, xLabel, yLabel, xD
           <Scatter
             name={steel}
             data={dataBySteelType[steel]}
-            fill={chroma.scale("RdYlBu").colors(steelTypes.length)[index]}
+            fill={chroma.scale("RdYlBu").colors(steelTypes.length*2)[index*2]}
             fillOpacity={0.75}
             onClick={handleOnClick}
             key={nanoid()}
