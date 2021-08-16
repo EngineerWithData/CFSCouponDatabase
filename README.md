@@ -6,7 +6,9 @@
 
 <p>This repository stores hundres of cold-formed steel coupon test curves. 
 
-We save the data as a json file at [here](./data/all-data.json) in the data folder.
+We save the data as a json file at [here](./data/all-data.json) in the data folder. 
+
+Note that the stress-strain curves stored in the json file have been reduced to less than 75 data points to be loadable in browser.
 
 This repository comes with a data viewer. You can use the viewer at the www.cfs-database.com.
 

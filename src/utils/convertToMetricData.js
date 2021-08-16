@@ -11,8 +11,12 @@ export function convertToMetricData(data) {
   if (data.hasOwnProperty('engCurve')) {
     metricData.engCurve = convertToMetricCurve(data.engCurve);
   }
-  metricData.Fy = data.Fy * KSI_TO_MPA;
-  metricData.Fu = data.Fu * KSI_TO_MPA;
+  if (data.hasOwnProperty('Fy')) {
+    metricData.Fy = data.Fy * KSI_TO_MPA;
+  }
+  if (data.hasOwnProperty('Fu')) {
+    metricData.Fu = data.Fu * KSI_TO_MPA;
+  }
 
   return metricData;
 }
