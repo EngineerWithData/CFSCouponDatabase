@@ -21,7 +21,7 @@ function IndexPage() {
           useMetric={{enabled: isMetric, onChange: () => setIsMetric(!isMetric)}}
         />)}
     >
-      <Seo title="Playground" />
+      {/*<Seo title="Playground" />*/}
       <DataPlayground preData={SpaceData} dataSet={CurveData} isMetric={isMetric}/>
       <References />
       <NextGenSteel />
