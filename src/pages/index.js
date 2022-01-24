@@ -9,6 +9,7 @@ import { useState } from "react"
 import NavigationBar from "../components/Navigation/navigation-bar"
 import References from "../components/References/references"
 import NextGenSteel from "../components/NextGenSteel/next-gen-steel"
+import { Helmet } from "react-helmet"
 
 function IndexPage() {
 
@@ -21,7 +22,11 @@ function IndexPage() {
           useMetric={{enabled: isMetric, onChange: () => setIsMetric(!isMetric)}}
         />)}
     >
-      {/*<Seo title="Playground" />*/}
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>CFS Material Database</title>
+        <link rel="canonical" href="http://cfs-database.com" />
+      </Helmet>
       <DataPlayground preData={SpaceData} dataSet={CurveData} isMetric={isMetric}/>
       <References />
       <NextGenSteel />
