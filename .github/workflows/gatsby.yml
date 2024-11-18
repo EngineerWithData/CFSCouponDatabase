@@ -37,14 +37,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Detect package manager
         id: detect-package-manager
         run: |
-          if [ -f "${{ github.workspace }}/Viewer/yarn.lock" ]; then
+          if [ -f "yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
             exit 0
-          elif [ -f "${{ github.workspace }}/Viewer/package.json" ]; then
+          elif [ -f "package.json" ]; then
             echo "manager=npm" >> $GITHUB_OUTPUT
             echo "command=ci" >> $GITHUB_OUTPUT
             exit 0
@@ -52,39 +53,35 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-      # - name: Setup Pages
-      #   id: pages
-      #   uses: actions/configure-pages@v5
-      #   with:
-      #     # Automatically inject pathPrefix in your Gatsby configuration file.
-      #     #
-      #     # You may remove this line if you want to manage the configuration yourself.
-      #     static_site_generator: gatsby
+
       - name: Restore cache
         uses: actions/cache@v4
         with:
           path: |
-            public
-            .cache
+            Viewer/public
+            Viewer/.cache
           key: ${{ runner.os }}-gatsby-build-${{ hashFiles('Viewer/public') }}
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
+
       - name: Install dependencies
-        working-directory: Viewer
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: Viewer/public
 
   # Deployment job
   deploy:
