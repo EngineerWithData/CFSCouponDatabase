@@ -6,20 +6,11 @@
 
 <p>This repository stores over 400 cold-formed steel coupon test curves. 
 
-We save the data as a json file at [here](./data/all-data.json) in the data folder. 
+We save the data as a json file at [Data](./Data/all-data.json) folder.
 
 Note that the stress-strain curves stored in the json file have been reduced to less than 75 data points to be loadable in browser.
 
-This repository comes with a data viewer. You can use the viewer at the www.cfs-database.com.
-
-Or you clone this repository to run locally by running the following command
-    
-    git clone https://github.com/cding91/gatsby-cfs.git
-    cd gatsby-cfs/
-    gatsby develop
-
-Visit the data viewer at http://localhost:8000
-
+This repository comes with a data viewer in [Viewer](./Viewer) folder.
 ## Motivation
 
 Every structural steel research project starts with tensile coupon tests. 
