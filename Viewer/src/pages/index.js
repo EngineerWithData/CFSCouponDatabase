@@ -1,8 +1,8 @@
 import * as React from "react"
 
 import Layout from "../components/Layout/layout"
-import CurveData from "../../data/curve-only.json"
-import SpaceData from "../../data/space-only.json"
+// import CurveData from "../../data/curve-only.json"
+// import SpaceData from "../../data/space-only.json"
 import DataPlayground from "../components/Plot/data-playground"
 import { useState } from "react"
 import NavigationBar from "../components/Navigation/navigation-bar"
@@ -10,9 +10,37 @@ import References from "../components/References/references"
 import NextGenSteel from "../components/NextGenSteel/next-gen-steel"
 import { Helmet } from "react-helmet"
 
+
+const loadData = async (url) => {  
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const jsonData = await response.json();
+    console.log('Data loaded:', jsonData);
+    return jsonData; // Return the data if you need to use it outside the function
+  } catch (error) {
+    console.error('Error fetching the JSON data:', error);
+  }
+};
+
 function IndexPage() {
 
   const [isMetric, setIsMetric] = useState(false);
+  const [CurveData, setCurveData] = useState([]);
+  const [SpaceData, setSpaceData] = useState([]);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      const curveData = await loadData("/data/curve-only.json");
+      const spaceData = await loadData("/data/space-only.json");
+      setCurveData(curveData);
+      setSpaceData(spaceData);
+    };
+
+    fetchData();
+  }, [])
 
   return (
     <Layout

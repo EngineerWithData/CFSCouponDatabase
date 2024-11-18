@@ -1,9 +1,9 @@
 module.exports = {
+  pathPrefix: "/CFSCouponDatabase",
   siteMetadata: {
     title: `CFS Material Database`,
     description: `Over 400 coupon data`,
-    author: `@TWG`,
-    siteUrl: `https://cfs-database.com/`,
+    author: `EngineerWithData`,
   },
   plugins: [
     `gatsby-plugin-postcss`,
