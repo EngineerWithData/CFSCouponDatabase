@@ -6,7 +6,7 @@
 
 <p>This repository stores over 400 cold-formed steel coupon test curves. 
 
-We save the data as a json file at [Data](./Data/all-data.json) folder.
+We save the data in two formats (mat and json) at [Data](./Data) folder.
 
 Note that the stress-strain curves stored in the json file have been reduced to less than 75 data points to be loadable in browser.
 
