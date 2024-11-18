@@ -28,6 +28,7 @@ concurrency:
 defaults:
   run:
     shell: bash
+    working-directory: Viewer # Set the working directory to Viewer
 
 jobs:
   # Build job
