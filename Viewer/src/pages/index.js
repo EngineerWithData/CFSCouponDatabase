@@ -1,19 +1,18 @@
 import * as React from "react"
 
 import Layout from "../components/Layout/layout"
-// import CurveData from "../../data/curve-only.json"
-// import SpaceData from "../../data/space-only.json"
 import DataPlayground from "../components/Plot/data-playground"
 import { useState } from "react"
 import NavigationBar from "../components/Navigation/navigation-bar"
 import References from "../components/References/references"
 import NextGenSteel from "../components/NextGenSteel/next-gen-steel"
 import { Helmet } from "react-helmet"
-
+import { withPrefix } from "gatsby"
 
 const loadData = async (url) => {  
   try {
-    const response = await fetch(url);
+    const fullUrl = process.env.NODE_ENV === 'production' ? withPrefix(url) : url;
+    const response = await fetch(fullUrl);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
