@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/385972865.svg)](https://doi.org/10.5281/zenodo.14182094)
+
 <h1 align="center">
   Cold-Formed Steel (CFS) Material Databae
 </h1>
