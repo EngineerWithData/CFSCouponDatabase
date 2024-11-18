@@ -58,6 +58,9 @@ typings/
 Viewer/.cache/
 Viewer/public
 
+# IDE
+Viewer/.idea/
+
 # Mac files
 .DS_Store
 
